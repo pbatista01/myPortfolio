@@ -361,10 +361,10 @@
   .project-section a{
     display:block;
     width:35%;
-    height:30px;
+    height:35px;
     font-size:0.7rem;
     margin:0 auto;
-    letter-spacing:0.2px;
+    letter-spacing:0.5px;
     color:white;
     cursor:pointer;
     border:none;
@@ -372,8 +372,9 @@
     text-transform:uppercase;
     text-align:center;
     background-color:var(--font-color);
-    line-height:30px;
+    line-height:35px;
     box-shadow: 1px 1px 3px 0px rgba(1,35,60,1);
+    transition: all 0.5s ease;
   }
   
   .project-section a:hover{
@@ -381,6 +382,7 @@
     color:var(--font-color);
     box-shadow: 1px 1px 3px 0px #fdc220;
     font-weight: bold;
+    letter-spacing:2px;
   }
   
   .project-card:nth-child(1){
@@ -488,6 +490,7 @@
     place-items:center;
     border:2px solid #fde092;
     border-radius:100%;
+
   }
   
   .social-icons i{
@@ -495,6 +498,7 @@
     color:var(--font-color);
     cursor:pointer;
     margin:4px;
+    transition: all 0.25s ease; 
   }
   
   .social-icons a:hover{
@@ -547,49 +551,48 @@
     height:80px;
   }
   
-  .contact-form input[type="submit"]::after{
-    content: "SEND MESSAGE";
-  }
-  
-  .contact-form input[type="submit"]{
+  .btn-send{
     display:block;
-    width:120px;
+    width:35%;
     padding:5px;
     padding-left:5px;
-    height:35px;
+    height:40px;
     background-color:var(--font-color);
     color:white;
     border:none;
     font-size:0.7rem;
     text-transform:uppercase;
-    letter-spacing:0.2px;
+    letter-spacing:0.5px;
     cursor:pointer;
-    margin:15px auto;
+    margin:25px auto;
     box-shadow: 1px 1px 3px 0px rgba(1,35,60,1);
     position:relative;
-    transition: all 0.25s ease;  
+    transition: all 0.5s ease;  
     border-radius:35px;
   }
   
-  .contact-form input[type="submit"]:hover{
+  .btn-send:hover{
     background-color:#fdc220;
     color:var(--font-color);
     box-shadow: 1px 1px 3px 0px #fdc220;
     font-weight: bold;
+    letter-spacing:1px;
+  }
+
+  .btn-send:active {
+    letter-spacing: 3px;
   }
   
-  .contact-form input[type="submit"]:hover .send-icon{
-    color:var(--font-color);
+  .btn-send:after {
+    content: "SEND MESSAGE";
   }
   
-   
-  .contact-form input[type="submit"].onclic {
-    width: 35px;
-    height:35px;
-    border-radius:35px;
-    border-color: var(--font-color);
-    background-color:#fdc220;
-    border-width: 5px;
+  /* Onclic Animation */
+  .onclic {
+    width: 40px;
+    border-color: #fde092;
+    background: #fdc220;
+    border-width: 3px;
     font-size: 0;
     border-left-color: var(--font-color);
     animation: rotating 2s 0.25s linear infinite;
@@ -600,20 +603,24 @@
     background: #fdc220;
   }
   
+  /* Validate Styles */
   .validate {
-    font-size: 13px;
+    font-size: 0.7rem;
+    font-weight:bold;
     color: var(--font-color);
-    background: white;
+    background: #fdc220;
   }
   
   .validate:after {
-    width:100%;
-    background-color:var(--font-color);
     font-family: 'FontAwesome';
     content: "\f00c";
   }
   
-   
+  .validate:before{
+    content: " ";
+  }
+  
+  /* Keyframes */
   @keyframes rotating {
     from {
       transform: rotate(0deg);
@@ -622,6 +629,7 @@
       transform: rotate(360deg);
     }
   }
+  
   
   footer{
     width:100%;
